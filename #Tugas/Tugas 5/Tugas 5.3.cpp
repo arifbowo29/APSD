@@ -7,13 +7,13 @@ void swap(int& a, int& b) {
 }
 
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // Pilih pivot sebagai elemen terakhir
-    int i = (low - 1); // Indeks dari elemen yang lebih kecil dari pivot
+    int pivot = arr[high]; 
+    int i = (low - 1); 
 
     for (int j = low; j <= high - 1; j++) {
-        // Jika elemen saat ini lebih kecil dari atau sama dengan pivot
+        
         if (arr[j] <= pivot) {
-            i++; // Tingkatkan indeks dari elemen yang lebih kecil
+            i++; 
             swap(arr[i], arr[j]);
         }
     }
@@ -23,10 +23,10 @@ int partition(int arr[], int low, int high) {
 
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
-        // pi adalah indeks partisi, arr[pi] sekarang pada posisi yang tepat
+        
         int pi = partition(arr, low, high);
 
-        // Pisahkan elemen yang lebih kecil sebelum partisi dan elemen yang lebih besar setelahnya
+        
         quickSort(arr, low, pi - 1);
         quickSort(arr, pi + 1, high);
     }
@@ -60,4 +60,3 @@ int main() {
     
     return 0;
 }
-
